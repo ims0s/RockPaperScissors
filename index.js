@@ -24,9 +24,6 @@ function computer(){
 }
 function player(choise){
     while(true){
-        // let choise=prompt('rock, paper or scissor ');
-        
-        //swap the player choice to a number  
         if(choise.toLowerCase() == 'rock' ){
             return 0; // 0 means rock
         }else if(choise.toLowerCase() == 'paper' ){
