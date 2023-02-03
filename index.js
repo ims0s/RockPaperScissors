@@ -1,3 +1,6 @@
+const rockPath = './photos/rock.jpg'
+const paperPath = './photos/paper.jpg'
+const scissorPath= './photos/scissor.jpg'
 function computer(){
     let Cchoise=Math.floor(Math.random()*10)%3; //generate random numbre from 0 to 2 
     return Cchoise // return  a number as 0 --> rock 
@@ -61,22 +64,27 @@ const rock=document.getElementById("r")
 const paper=document.getElementById("p")
 const scissor=document.getElementById("s")
 const score=document.getElementById('score')
+const playerUi=document.getElementById('player')
+
 rock.addEventListener("click",(e)=>{
-    let winner =playground(player(e.target.innerText),computer())
+    let winner =playground(player("rock"),computer())
     console.log(winner)
     assignScore(winner)
+    playerUi.src=rockPath;
 })
 
 paper.addEventListener("click",(e)=>{
-    let winner =playground(player(e.target.innerText),computer())
+    let winner =playground(player("paper"),computer())
     console.log(winner)
     assignScore(winner)
+    playerUi.src=paperPath;
 })
 
 scissor.addEventListener("click",(e)=>{
-    let winner =playground(player(e.target.innerText),computer())
+    let winner =playground(player("scissor"),computer())
     console.log(winner)
     assignScore(winner)
+    playerUi.src=scissorPath
 })
 
 function assignScore (winner){
@@ -92,3 +100,7 @@ function assignScore (winner){
     }
     score.innerText =`computer  ${compScore} - ${playerScore} player`
 }
+
+
+
+// playerUi.src='./photos/rock.jpg'
