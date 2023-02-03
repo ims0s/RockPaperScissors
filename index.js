@@ -1,8 +1,23 @@
 const rockPath = './photos/rock.jpg'
 const paperPath = './photos/paper.jpg'
 const scissorPath= './photos/scissor.jpg'
+let compScore=0;
+let playerScore=0;
+const rock=document.getElementById("r")
+const paper=document.getElementById("p")
+const scissor=document.getElementById("s")
+const score=document.getElementById('score')
+const playerUi=document.getElementById('player')
+const computerUi = document.getElementById('computer')
 function computer(){
     let Cchoise=Math.floor(Math.random()*10)%3; //generate random numbre from 0 to 2 
+    if(Cchoise ==0){
+        computerUi.src=rockPath
+    }else if (Cchoise==1){
+        computerUi.src=paperPath;
+    }else if(Cchoise==2){
+        computerUi.src=scissorPath;
+    }
     return Cchoise // return  a number as 0 --> rock 
                                        // 1 --> paper
                                        // 2 --> scissor
@@ -42,29 +57,7 @@ function playground(player , comp){
 
 
 }
-let compScore=0;
-let playerScore=0;
-for(let i =0;i<5;i++){
-    //the game of 5 rounds
-    // let winner=playground(player(),computer());
-    // if(winner == 'Tie'){ // this for tie 
-    //     compScore++;
-    //     playerScore++;
-    // }else if(winner == 'player'){ // point for player
-    //     playerScore++;
-    // }else if(winner == 'comp'){ // point for computer
-    //     compScore++;
-    // }
-    // console.log(`Player: ${playerScore} - Computer: ${compScore}`) // print the score 
-}
-// const buttons = document.querySelectorAll("button")
-// buttons.forEach((elemnt)=>{elemnt.classList.toggle("hidden")})
 
-const rock=document.getElementById("r")
-const paper=document.getElementById("p")
-const scissor=document.getElementById("s")
-const score=document.getElementById('score')
-const playerUi=document.getElementById('player')
 
 rock.addEventListener("click",(e)=>{
     let winner =playground(player("rock"),computer())
@@ -103,4 +96,4 @@ function assignScore (winner){
 
 
 
-// playerUi.src='./photos/rock.jpg'
+

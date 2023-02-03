@@ -1,15 +1,16 @@
 .hidden {
     visibility: hidden;
 }
-
+html{
+    background-color: black;
+    color: white;
+}
 .main,
 .playing,
 .chooses,
 .score,
 .choose {
     display: flex;
-
-
 }
 
 .playing,
